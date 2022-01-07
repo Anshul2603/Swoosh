@@ -5,14 +5,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import android.widget.ToggleButton
+import com.example.swoosh.Model.Player
 import com.example.swoosh.R
-import com.example.swoosh.Utilities.EXTRA_LEAGUE
-import com.example.swoosh.Utilities.EXTRA_SKILL
+import com.example.swoosh.Utilities.EXTRA_PLAYER
+
 
 class SkillActivity : BaseActivity() {
 
-    var league = ""
-    var skill = ""
+    lateinit var player: Player
     lateinit var beginnerSkillBtn: ToggleButton
     lateinit var ballerSkillBtn: ToggleButton
 
@@ -24,27 +24,26 @@ class SkillActivity : BaseActivity() {
         beginnerSkillBtn = findViewById(R.id.beginnerSkillBtn)
         ballerSkillBtn = findViewById(R.id.ballerSkillBtn)
 
-        league = intent.getStringExtra(EXTRA_LEAGUE).toString()
+        player = intent.getParcelableExtra(EXTRA_PLAYER)!!
 
     }
 
 
     fun onBeginnerClick(view: View) {
         ballerSkillBtn.isChecked = false
-        skill = "beginner"
+        player.skill = "beginner"
     }
 
     fun onBallerClick(view: View) {
         beginnerSkillBtn.isChecked = false
-        skill = "baller"
+        player.skill = "baller"
 
     }
 
     fun onSkillfinishClick(view: View) {
-        if (skill != "") {
+        if (player.skill != "") {
             val finishActivity = Intent(this, FinishActivity::class.java)
-            finishActivity.putExtra(EXTRA_LEAGUE, league)
-            finishActivity.putExtra(EXTRA_SKILL, skill)
+            finishActivity.putExtra(EXTRA_PLAYER, player)
 
             startActivity(finishActivity)
         } else {

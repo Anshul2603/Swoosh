@@ -6,13 +6,15 @@ import android.view.View
 import android.widget.Toast
 import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatActivity
-import com.example.swoosh.Utilities.EXTRA_LEAGUE
+import com.example.swoosh.Model.Player
 import com.example.swoosh.R
+import com.example.swoosh.Utilities.EXTRA_PLAYER
 
 class LeagueActivity : AppCompatActivity() {
 
     //Initializing Variables
-    private var selectedLeague = ""
+
+    var player = Player("", "")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league)
@@ -27,7 +29,7 @@ class LeagueActivity : AppCompatActivity() {
             womensLeagueBtn.isChecked = false
             coedLeagueBtn.isChecked = false
 
-            selectedLeague = "mens"
+            player.league = "mens"
         }
 
         //Women's Button
@@ -35,7 +37,7 @@ class LeagueActivity : AppCompatActivity() {
             mensLeagueBtn.isChecked = false
             coedLeagueBtn.isChecked = false
 
-            selectedLeague = "womens"
+            player.league = "womens"
         }
 
         //Co-Ed Button
@@ -43,7 +45,7 @@ class LeagueActivity : AppCompatActivity() {
             mensLeagueBtn.isChecked = false
             womensLeagueBtn.isChecked = false
 
-            selectedLeague = "co-ed"
+            player.league = "co-ed"
         }
 
 
@@ -52,11 +54,11 @@ class LeagueActivity : AppCompatActivity() {
     //Next Button
     fun leagueNextClicked(view: View) {
 
-        if (selectedLeague != "") {
+        if (player.league != "") {
             //Going from LeagueActivity to SkillActivity
             val skillActivity = Intent(this, SkillActivity::class.java)
             // sending data to SkillActivity
-            skillActivity.putExtra(EXTRA_LEAGUE, selectedLeague)
+            skillActivity.putExtra(EXTRA_PLAYER, player)
 
             startActivity(skillActivity)
         } else {
