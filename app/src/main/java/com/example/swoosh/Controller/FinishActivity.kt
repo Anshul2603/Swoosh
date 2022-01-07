@@ -11,6 +11,8 @@ class FinishActivity : AppCompatActivity() {
 
     lateinit var searchLeaguesText: TextView
     lateinit var player: Player
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finish)
