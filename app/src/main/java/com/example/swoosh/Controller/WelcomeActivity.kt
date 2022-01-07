@@ -1,9 +1,9 @@
-package com.example.swoosh
+package com.example.swoosh.Controller
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import androidx.appcompat.app.AppCompatActivity
+import com.example.swoosh.R
 
 class WelcomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SkillActivity">
+    tools:context=".Controller.SkillActivity">
 
     <ImageView
         android:id="@+id/imageView4"
@@ -56,24 +56,26 @@
         app:layout_constraintTop_toTopOf="@+id/imageView4">
 
         <ToggleButton
-            android:id="@+id/toggleButton4"
+            android:id="@+id/beginnerSkillBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
             android:layout_weight="1"
             android:background="@drawable/swoosh_toogle"
+            android:onClick="onBeginnerClick"
             android:text="BEGINNER"
             android:textColor="@color/white"
             android:textOff="BEGINNER"
             android:textOn="BEGINNER" />
 
         <ToggleButton
-            android:id="@+id/toggleButton5"
+            android:id="@+id/ballerSkillBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_weight="1"
             android:background="@drawable/swoosh_toogle"
+            android:onClick="onBallerClick"
             android:text="BALLER"
             android:textColor="@color/white"
             android:textOff="BALLER"
@@ -81,7 +83,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/skillFinishBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -89,6 +91,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/swoosh_button"
         android:fontFamily="@font/montserrat"
+        android:onClick="onSkillfinishClick"
         android:text="FINISH"
         app:backgroundTint="@android:color/transparent"
         app:backgroundTintMode="screen"

@@ -1,4 +1,4 @@
-package com.example.swoosh
+package com.example.swoosh.Controller
 
 import android.os.Bundle
 import android.util.Log

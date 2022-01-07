@@ -10,16 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Swoosh">
         <activity
-            android:name=".SkillActivity"
+            android:name=".Controller.FinishActivity"
             android:exported="false" />
         <activity
-            android:name=".BaseActivity"
+            android:name=".Controller.SkillActivity"
             android:exported="false" />
         <activity
-            android:name=".LeagueActivity"
+            android:name=".Controller.BaseActivity"
             android:exported="false" />
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".Controller.LeagueActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Controller.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
